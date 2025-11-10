@@ -1,5 +1,7 @@
 // Clase base: Registro
 import mysql from "mysql2/promise";
+//import agregado para el express
+import express from "express";
 
 class Registro {
   #nombre;
@@ -87,7 +89,9 @@ class Usuario extends Registro {
     return `ID: ${this.#id}, ${super.mostrarInfo()}`;
   }
 }
-
+//const para enlazar la bese de datos, falta mejorar
+const app = express;
+const port = 3060;
 // Ejemplo de uso
 const usuario1 = new Usuario(1, "Carlos Pérez", "carlos@example.com");
 
