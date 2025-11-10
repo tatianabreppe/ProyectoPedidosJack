@@ -1,5 +1,7 @@
 // Clase base: Registro
 import mysql from "mysql2/promise";
+// import de expres 
+import express  from "express";
 
 class Registro {
   #nombre;
@@ -88,8 +90,13 @@ class Usuario extends Registro {
   }
 }
 
+//const de app y del port
+const app = express();
+const port = 3060;
+
 // Ejemplo de uso
 const usuario1 = new Usuario(1, "Carlos Pérez", "carlos@example.com");
 
 console.log(usuario1.mostrarInfo()); // ID: 1, Nombre: Carlos Pérez, Email: carlos@example.com
 
+app.listen(port,() => console.log('Servidor corriendo en https://localhost:3060'));
